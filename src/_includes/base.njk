@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}{{ site.name }}</title>
+    <meta name="description" content="{{ description | default(site.description) }}">
+    <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+    <div class="terminal">
+        <header class="terminal-header">
+<pre class="ascii-mascot" aria-label="A friendly ASCII foxhound mascot">
+    __      _
+o'')}____//
+ `_/      )
+ (_(_/-(_/
+</pre>
+            <h1>{{ site.name | upper }}</h1>
+            <p class="subtitle">{{ site.description }}</p>
+        </header>
+
+        <main class="terminal-body">
+            {{ content | safe }}
+        </main>
+
+        <footer class="terminal-footer">
+            <nav class="social-nav">
+                <a href="{{ site.socials.github }}">github</a>
+                <a href="{{ site.socials.youtube }}">youtube</a>
+                <a href="{{ site.socials.instagram }}">instagram</a>
+                <a href="{{ site.socials.discord }}">discord</a>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>
