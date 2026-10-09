@@ -2,6 +2,8 @@
 layout: base.njk
 title: home
 ---
+{% set dir_perms %}<span class="perms"><span class="c-d">d</span><span class="c-r1">r</span><span class="c-w">w</span><span class="c-x">x</span><span class="c-r2">r</span><span class="c-dash">-</span><span class="c-x">x</span><span class="c-r2">r</span><span class="c-dash">-</span><span class="c-x">x</span></span>{% endset %}
+{% set file_perms %}<span class="perms"><span class="c-dash">-</span><span class="c-r1">r</span><span class="c-w">w</span><span class="c-dash">-</span><span class="c-r2">r</span><span class="c-dash">-</span><span class="c-dash">-</span><span class="c-r2">r</span><span class="c-dash">-</span><span class="c-dash">-</span></span>{% endset %}
 
 <div class="command-block">
     <div class="prompt">
@@ -9,9 +11,24 @@ title: home
     </div>
 
     <nav class="directory-list" aria-label="Main navigation">
-        <ul>
-            <li><a href="#shop">shop/</a></li>
-            <li><a href="#about">about/</a></li>
+        <ul class="ls-tree">
+            <li>
+                <details class="tree-folder">
+                    <summary>{{ dir_perms | safe }} <span class="dir-name">projects/</span></summary>
+                    <ul class="tree-contents">
+                        <li><span class="tree-branch">├──</span> {{ file_perms | safe }} <a href="#mini-synth">mini-synth</a></li>
+                        <li><span class="tree-branch">├──</span> {{ file_perms | safe }} <a href="#chase-tail">chase-tail</a></li>
+                        <li><span class="tree-branch">├──</span> {{ file_perms | safe }} <a href="#wave-hound">wave-hound</a></li>
+                        <li><span class="tree-branch">├──</span> {{ file_perms | safe }} <a href="#mp3-bender">mp3-bender</a></li>
+                        <li><span class="tree-branch">├──</span> {{ file_perms | safe }} <a href="#ai-voicebot">ai-voicebot</a></li>
+                        <li><span class="tree-branch">├──</span> {{ file_perms | safe }} <a href="#minimal-phone">minimal-phone</a></li>
+                        <li><span class="tree-branch">└──</span> {{ file_perms | safe }} <a href="#80s-radio">80s-radio</a></li>
+                    </ul>
+                </details>
+            </li>
+            <li>{{ dir_perms | safe }} <a href="#shop" class="dir-name">shop/</a></li>
+            <li>{{ dir_perms | safe }} <a href="#about" class="dir-name">about/</a></li>
+            <li>{{ dir_perms | safe }} <a href="#buy-me-a-coffee" class="dir-name">buy-me-a-coffee/</a></li>
         </ul>
     </nav>
 </div>

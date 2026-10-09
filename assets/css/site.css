@@ -87,10 +87,71 @@ a:hover, a:focus {
     margin-bottom: 0.5rem;
 }
 
-.directory-list li::before {
-    content: "drwxr-xr-x ";
-    opacity: 0.5;
+.ls-tree .perms {
     margin-right: 1rem;
+    display: inline-block;
+}
+
+.perms .c-d { color: var(--path-color, #8be9fd); }
+.perms .c-r1 { color: #ff5555; }
+.perms .c-r2 { color: #ffb86c; }
+.perms .c-x { color: var(--char-color, #50fa7b); }
+.perms .c-w { color: #f1fa8c; }
+.perms .c-dash { color: #6272a4; }
+
+.ls-tree .dir-name {
+    color: var(--path-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.ls-tree a {
+    color: var(--link-color);
+}
+
+.ls-tree a.dir-name {
+    color: var(--path-color);
+    border-bottom: 1px dotted var(--path-color);
+}
+
+.ls-tree a.dir-name:hover {
+    color: var(--link-hover);
+    border-bottom: 1px solid var(--link-hover);
+}
+
+/* Tree Folder styling */
+.tree-folder summary {
+    display: block; /* Hides default triangle in most browsers */
+    cursor: pointer;
+    user-select: none;
+    list-style: none; /* Hides default triangle in newer WebKit */
+}
+
+.tree-folder summary::-webkit-details-marker {
+    display: none; /* Hides triangle in older Safari/Chrome */
+}
+
+.tree-folder summary:hover .dir-name {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+/* Tree Contents formatting */
+.tree-contents {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem; /* Indent the contents slightly */
+}
+
+.tree-contents li {
+    margin-bottom: 0.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.tree-branch {
+    color: #6272a4;
+    margin-right: 0.5rem;
+    white-space: pre;
 }
 
 .error-output {
