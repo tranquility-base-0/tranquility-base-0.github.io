@@ -10,12 +10,8 @@
 <body>
     <div class="terminal">
         <header class="terminal-header">
-<pre class="ascii-mascot" aria-label="A friendly ASCII foxhound mascot">
-    __      _
-o'')}____//
- `_/      )
- (_(_/-(_/
-</pre>
+{% if title == 'home' %}<pre class="ascii-banner" aria-hidden="true">{{ asciiHero }}</pre>
+{% endif %}
             <h1>{{ site.name | upper }}</h1>
             <p class="subtitle">{{ site.description }}</p>
         </header>

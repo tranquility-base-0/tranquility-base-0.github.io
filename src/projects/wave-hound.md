@@ -1,15 +1,15 @@
 ---
 layout: base.njk
-title: wavehound
+title: wave-hound
 ---
 
 <div class="command-block">
     <div class="prompt">
-        <span class="user">guest@tranquility-base</span><span class="colon">:</span><span class="path">~</span><span class="char">$</span> cat projects/wavehound.md
+        <span class="user">guest@tranquility-base</span><span class="colon">:</span><span class="path">~</span><span class="char">$</span> cat projects/wave-hound.md
     </div>
 </div>
 
-## wavehound
+## wave-hound
 
 A purpose-built passive wireless/network field instrument.
 
@@ -17,10 +17,7 @@ It is an open hardware/software project focused on observing and understanding w
 
 ### resources
 
-- [github](TODO-github-link)
-- [documentation](TODO-docs-link)
-- [build information](TODO-build-link)
-- [shop](TODO-shop-link)
+- [github](https://github.com/tranquility-base-0/wavehound-esp32-wroom)
 
 <div class="command-block return-block">
     <div class="prompt">

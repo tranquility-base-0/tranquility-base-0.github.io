@@ -31,6 +31,25 @@ body {
     margin-bottom: 2rem;
 }
 
+.ascii-banner {
+    color: var(--link-hover);
+    line-height: 1.1;
+    font-weight: bold;
+    margin: 0 0 1.5rem 0;
+    /* 93 columns at 16px Courier is ~893px — wider than the 800px terminal.
+       0.8em (~7.7px/char) brings it to ~715px so it fits. */
+    font-size: 0.8em;
+    /* Safety net: don't let a future wider banner blow out the layout. */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: pre;
+    scrollbar-width: none;
+}
+
+.ascii-banner::-webkit-scrollbar {
+    display: none;
+}
+
 h1, h2, h3 {
     font-weight: normal;
     color: var(--link-color);
