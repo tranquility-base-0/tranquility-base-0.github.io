@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+
+<div class="command-block">
+    <div class="prompt">
+        <span class="user">guest@tranquility-base</span><span class="colon">:</span><span class="path">~</span><span class="char">$</span> cat projects/{{ title }}.md
+    </div>
+</div>
+
+<h2>{{ title }}</h2>
+
+{{ content | safe }}
+
+{% if image %}
+<figure class="project-figure">
+    {% if image2 %}<div class="project-figure-grid">{% endif %}
+    <img src="/assets/images/{{ image }}" alt="{{ imageAlt | default(title) }}">
+    {% if image2 %}
+    <img src="/assets/images/{{ image2 }}" alt="{{ imageAlt2 | default(title) }}">
+    </div>
+    {% endif %}
+</figure>
+{% endif %}
+
+<div class="command-block return-block">
+    <div class="prompt">
+        <span class="user">guest@tranquility-base</span><span class="colon">:</span><span class="path">~/projects</span><span class="char">$</span> cd ..
+    </div>
+    <a href="/" class="back-link">&larr; back to base</a>
+</div>

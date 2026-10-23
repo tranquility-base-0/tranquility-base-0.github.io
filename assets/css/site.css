@@ -36,9 +36,11 @@ body {
     line-height: 1.1;
     font-weight: bold;
     margin: 0 0 1.5rem 0;
-    /* 93 columns at 16px Courier is ~893px — wider than the 800px terminal.
-       0.8em (~7.7px/char) brings it to ~715px so it fits. */
-    font-size: 0.8em;
+    /* Width scales linearly with font-size (mono font: ~56px of art width per
+       1px of font-size for these 93 columns). Target: as wide as the
+       "TRANQUILITY BASE" h1 (2rem ≈ 307px) → 307/56 ≈ 5.5px = 0.344rem.
+       Aspect ratio preserved: both axes scale with the font size. */
+    font-size: 0.344rem;
     /* Safety net: don't let a future wider banner blow out the layout. */
     overflow-x: hidden;
     overflow-y: hidden;
@@ -180,6 +182,39 @@ a:hover, a:focus {
 
 .return-block {
     margin-top: 3rem;
+}
+
+/* ---------- Project pages ---------- */
+
+.project-figure {
+    margin: 2rem 0;
+    border: 1px solid var(--border-color, #6272a4);
+    padding: 0.5rem;
+    max-width: 100%;
+}
+
+.project-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Two images side by side inside one figure */
+.project-figure-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+/* Two images side by side inside one figure.
+   Both source photos have different aspect ratios (≈0.97 and ≈0.78),
+   so a shared 4:5 box + object-fit: cover gives them matching heights. */
+.project-figure-grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
 }
 
 .back-link {

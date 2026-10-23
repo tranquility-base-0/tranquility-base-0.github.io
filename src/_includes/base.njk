@@ -20,14 +20,14 @@
             {{ content | safe }}
         </main>
 
-        <footer class="terminal-footer">
+        {% if title == 'home' %}<footer class="terminal-footer">
             <nav class="social-nav">
                 <a href="{{ site.socials.github }}">github</a>
                 <a href="{{ site.socials.youtube }}">youtube</a>
                 <a href="{{ site.socials.instagram }}">instagram</a>
                 <a href="{{ site.socials.email }}">email</a>
             </nav>
-        </footer>
+        </footer>{% endif %}
     </div>
 </body>
 </html>
