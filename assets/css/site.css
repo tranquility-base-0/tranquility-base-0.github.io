@@ -217,6 +217,18 @@ a:hover, a:focus {
     object-fit: cover;
 }
 
+/* Three images in one row.
+    The three source photos have very different aspect ratios
+    (≈1.21, ≈0.56, ≈0.63), so a shared box + object-fit: cover
+    keeps them at matching heights in a single row. */
+.project-figure-grid.has-three {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.project-figure-grid.has-three img {
+    aspect-ratio: 3 / 4;
+}
+
 .back-link {
     display: inline-block;
     margin-top: 0.5rem;

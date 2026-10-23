@@ -14,10 +14,11 @@ layout: base.njk
 
 {% if image %}
 <figure class="project-figure">
-    {% if image2 %}<div class="project-figure-grid">{% endif %}
+    {% if image2 %}<div class="project-figure-grid{% if image3 %} has-three{% endif %}">{% endif %}
     <img src="/assets/images/{{ image }}" alt="{{ imageAlt | default(title) }}">
     {% if image2 %}
     <img src="/assets/images/{{ image2 }}" alt="{{ imageAlt2 | default(title) }}">
+    {% if image3 %}<img src="/assets/images/{{ image3 }}" alt="{{ imageAlt3 | default(title) }}">{% endif %}
     </div>
     {% endif %}
 </figure>
