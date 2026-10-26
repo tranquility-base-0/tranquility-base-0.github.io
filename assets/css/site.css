@@ -85,6 +85,11 @@ a:hover, a:focus {
     margin: 2rem 0;
 }
 
+.command-output {
+    margin: 0 0 1rem 0;
+    opacity: 0.9;
+}
+
 .prompt {
     margin-bottom: 1rem;
     font-weight: bold;

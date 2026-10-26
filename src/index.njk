@@ -27,7 +27,17 @@ title: home
                 </details>
             </li>
             <li>{{ dir_perms | safe }} <a href="#shop" class="dir-name">shop/</a></li>
-            <li>{{ dir_perms | safe }} <a href="#about" class="dir-name">about/</a></li>
+            <li>
+                <details class="tree-folder" id="about">
+                    <summary>{{ dir_perms | safe }} <span class="dir-name">about/</span></summary>
+                    <div class="tree-contents command-block">
+                        <div class="prompt">
+                            <span class="user">guest@tranquility-base</span><span class="colon">:</span><span class="path">~</span><span class="char">$</span> cat about.txt
+                        </div>
+                        <p class="command-output">Welcome to tranquility base, a maker/field laboratory for the world-weary moonwalker. In addition to our own original designs, here we showcase other projects that we think are brilliant but under-documented. Mission objective: make all brilliant DIY microcontroller projects in the universe accessible to the beginner maker/hobbyist/tinkerer. Every project is open, documented, and meant to be remixed. Pull up a space suit and see what the bench has been dreaming up lately.</p>
+                    </div>
+                </details>
+            </li>
             <li>{{ dir_perms | safe }} <a href="#buy-me-a-coffee" class="dir-name">buy-me-a-coffee/</a></li>
         </ul>
     </nav>
